@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Duedate:
+  = @shared_expense.duedate
+%p
+  %b Parties:
+  = @shared_expense.parties
+%p
+  %b Amount:
+  = @shared_expense.amount
+
+= link_to 'Edit', edit_shared_expense_path(@shared_expense)
+\|
+= link_to 'Back', shared_expenses_path

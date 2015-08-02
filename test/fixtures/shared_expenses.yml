@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  duedate: 2015-08-02
+  parties: MyText
+  amount: 1
+
+two:
+  duedate: 2015-08-02
+  parties: MyText
+  amount: 1

@@ -1,0 +1,19 @@
+= form_for @shared_expense do |f|
+  - if @shared_expense.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@shared_expense.errors.count, "error")} prohibited this shared_expense from being saved:"
+      %ul
+        - @shared_expense.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :duedate
+    = f.date_select :duedate
+  .field
+    = f.label :parties
+    = f.text_area :parties
+  .field
+    = f.label :amount
+    = f.number_field :amount
+  .actions
+    = f.submit 'Save'

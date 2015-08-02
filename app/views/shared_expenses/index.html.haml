@@ -1,0 +1,29 @@
+- if @shared_expenses.any?
+  - @shared_expenses.each do |shared_expense|
+    = render shared_expense
+- else
+  %p There aren't any shared expenses yet.
+
+%table
+  %thead
+    %tr
+      %th Duedate
+      %th Parties
+      %th Amount
+      %th
+      %th
+      %th
+
+  %tbody
+    - @shared_expenses.each do |shared_expense|
+      %tr
+        %td= shared_expense.duedate
+        %td= shared_expense.parties
+        %td= shared_expense.amount
+        %td= link_to 'Show', shared_expense
+        %td= link_to 'Edit', edit_shared_expense_path(shared_expense)
+        %td= link_to 'Destroy', shared_expense, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= button_to 'Add', new_shared_expense_path, class: "btn btn-lg btn-primary", method: :get
