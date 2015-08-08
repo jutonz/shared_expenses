@@ -28,7 +28,7 @@ class SharedExpensesController < ApplicationController
 
     respond_to do |format|
       if @shared_expense.save
-        format.html { redirect_to @shared_expense, notice: 'Shared expense was successfully created.' }
+        format.html { redirect_to root_url, notice: 'Shared expense was successfully created.' }
         format.json { render :show, status: :created, location: @shared_expense }
       else
         format.html { render :new }
